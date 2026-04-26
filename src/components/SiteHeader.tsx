@@ -15,7 +15,7 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="Techno Homesteading"
-            className="h-9 w-auto md:h-11"
+            className="h-14 w-auto md:h-20 lg:h-24"
           />
           <span className="hidden text-[0.65rem] font-medium uppercase tracking-[0.25em] text-ink-soft sm:inline">
             Quarterly Journal
