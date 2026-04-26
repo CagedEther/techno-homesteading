@@ -52,10 +52,10 @@ function JournalIndex() {
               className="group grid gap-8 py-10 md:grid-cols-12 md:gap-10"
             >
               <div className="md:col-span-5">
-                {post.coverUrl && (
+                {post.leadImage && (
                   <img
-                    src={post.coverUrl}
-                    alt={post.title}
+                    src={post.leadImage.src}
+                    alt={post.leadImage.alt || post.title}
                     loading="lazy"
                     width={1400}
                     height={1000}

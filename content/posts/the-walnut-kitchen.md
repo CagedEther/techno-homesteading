@@ -4,8 +4,9 @@ description: "A mid-century-inflected kitchen in the Hudson Valley proves, once 
 date: "2024-12-09"
 author: "Eleanor Vance"
 category: "Interiors"
-cover: "post-kitchen"
 ---
+
+![A vertical-grain American walnut kitchen with honed Calacatta countertops](/images/posts/post-kitchen.jpg)
 
 There is a particular pleasure in a kitchen that has been thought through to the last drawer pull. This one — wrapped, floor to ceiling, in vertical-grain American walnut — manages the rare trick of feeling at once monumental and entirely usable.
 

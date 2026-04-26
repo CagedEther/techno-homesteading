@@ -1,28 +1,4 @@
 import { marked } from "marked";
-import heroVilla from "@/assets/hero-villa.jpg";
-import postLivingRoom from "@/assets/post-living-room.jpg";
-import postCourtyard from "@/assets/post-courtyard.jpg";
-import postStaircase from "@/assets/post-staircase.jpg";
-import postKitchen from "@/assets/post-kitchen.jpg";
-import postSierraFoothillsHouse from "@/assets/post-sierra-foothills-house.jpg";
-
-/**
- * Map of cover-image keys (referenced in markdown frontmatter) to bundled
- * asset URLs. Add a new entry here when adding a new image to src/assets.
- */
-const COVER_IMAGES: Record<string, string> = {
-  "hero-villa": heroVilla,
-  "post-living-room": postLivingRoom,
-  "post-courtyard": postCourtyard,
-  "post-staircase": postStaircase,
-  "post-kitchen": postKitchen,
-  "post-sierra-foothills-house": postSierraFoothillsHouse,
-};
-
-export function resolveCover(key: string | undefined): string | undefined {
-  if (!key) return undefined;
-  return COVER_IMAGES[key];
-}
 
 /**
  * Minimal YAML frontmatter parser. Handles `key: "value"` and `key: value`
@@ -56,8 +32,8 @@ export interface PostMeta {
   date: string;
   author: string;
   category: string;
-  cover?: string;
-  coverUrl?: string;
+  /** First image found in the post body — used for listings and social previews. */
+  leadImage?: { src: string; alt: string };
 }
 
 export interface Post extends PostMeta {
@@ -101,6 +77,21 @@ function estimateReadingMinutes(text: string): number {
   return Math.max(1, Math.round(words / 220));
 }
 
+/**
+ * Extracts the first <img> tag from rendered HTML so listings can show a
+ * preview without needing a separate `cover:` frontmatter field. Returns the
+ * src and alt text, or undefined if the post has no images.
+ */
+function extractLeadImage(html: string): { src: string; alt: string } | undefined {
+  const imgMatch = /<img\b[^>]*>/i.exec(html);
+  if (!imgMatch) return undefined;
+  const tag = imgMatch[0];
+  const srcMatch = /\bsrc\s*=\s*["']([^"']+)["']/i.exec(tag);
+  if (!srcMatch) return undefined;
+  const altMatch = /\balt\s*=\s*["']([^"']*)["']/i.exec(tag);
+  return { src: srcMatch[1], alt: altMatch?.[1] ?? "" };
+}
+
 let cachedPosts: Post[] | null = null;
 
 export function getAllPosts(): Post[] {
@@ -108,6 +99,7 @@ export function getAllPosts(): Post[] {
   const posts: Post[] = Object.entries(POST_FILES).map(([path, raw]) => {
     const { data, content } = parseFrontmatter(raw);
     const slug = slugFromPath(path);
+    const html = marked.parse(content) as string;
     return {
       slug,
       title: data.title ?? slug,
@@ -115,9 +107,8 @@ export function getAllPosts(): Post[] {
       date: data.date ?? "",
       author: data.author ?? "Techno Homesteading",
       category: data.category ?? "Journal",
-      cover: data.cover,
-      coverUrl: resolveCover(data.cover),
-      html: marked.parse(content) as string,
+      leadImage: extractLeadImage(html),
+      html,
       readingMinutes: estimateReadingMinutes(content),
     };
   });
