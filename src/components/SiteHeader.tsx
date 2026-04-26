@@ -17,9 +17,6 @@ export function SiteHeader() {
             alt="Techno Homesteading"
             className="h-14 w-auto md:h-20 lg:h-24"
           />
-          <span className="hidden text-[0.65rem] font-medium uppercase tracking-[0.25em] text-ink-soft sm:inline">
-            Quarterly Journal
-          </span>
         </Link>
         <nav className="flex items-center gap-7">
           {NAV.map((item) => (
