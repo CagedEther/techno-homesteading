@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/logo-techno-homesteading.png";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -10,13 +11,12 @@ export function SiteHeader() {
   return (
     <header className="border-b border-rule bg-paper">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
-        <Link to="/" className="flex items-baseline gap-2">
-          <span
-            className="text-2xl font-bold tracking-tight text-ink"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
-            Techno Homesteading
-          </span>
+        <Link to="/" className="flex items-center gap-4">
+          <img
+            src={logo}
+            alt="Techno Homesteading"
+            className="h-9 w-auto md:h-11"
+          />
           <span className="hidden text-[0.65rem] font-medium uppercase tracking-[0.25em] text-ink-soft sm:inline">
             Quarterly Journal
           </span>
@@ -46,12 +46,11 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-12">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <p
-              className="text-2xl font-bold text-ink"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Techno Homesteading
-            </p>
+            <img
+              src={logo}
+              alt="Techno Homesteading"
+              className="h-8 w-auto md:h-10"
+            />
             <p className="mt-2 max-w-md text-sm text-ink-soft">
               A quarterly journal of architecture, interiors, and the quiet art
               of living well.
