@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { getAllPosts, formatDate } from "@/lib/content";
+import { getAllPosts, formatDate, type Post } from "@/lib/content";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,9 +21,7 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  loader: () => {
-    return { posts: getAllPosts() };
-  },
+  loader: (): { posts: Post[] } => ({ posts: getAllPosts() }),
   component: Index,
 });
 
@@ -136,7 +134,7 @@ function PostCard({
   post,
   large = false,
 }: {
-  post: ReturnType<typeof getAllPosts>[number];
+  post: Post;
   large?: boolean;
 }) {
   return (
