@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { getAllPosts, formatDate } from "@/lib/content";
+import { getAllPosts, formatDate, type Post } from "@/lib/content";
 
 export const Route = createFileRoute("/journal/")({
   head: () => ({
@@ -18,12 +18,13 @@ export const Route = createFileRoute("/journal/")({
       },
     ],
   }),
-  loader: () => ({ posts: getAllPosts() }),
+  loader: (): { posts: Post[] } => ({ posts: getAllPosts() }),
   component: JournalIndex,
 });
 
 function JournalIndex() {
   const { posts } = Route.useLoaderData();
+  const list = posts as Post[];
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 lg:px-12 lg:py-24">
       <header className="mx-auto max-w-3xl text-center">
@@ -43,7 +44,7 @@ function JournalIndex() {
       <div className="rule mt-16" />
 
       <ul className="divide-y divide-rule">
-        {posts.map((post) => (
+        {list.map((post) => (
           <li key={post.slug}>
             <Link
               to="/journal/$slug"
