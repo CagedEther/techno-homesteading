@@ -6,4 +6,16 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+export default defineConfig({
+  // Pre-render all known routes at build time so the published site is fully
+  // static and SEO-friendly. The `/journal/$slug` route also exports its own
+  // `prerender` config listing every post slug.
+  tanstackStart: {
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+      retryCount: 2,
+    },
+    pages: [{ path: "/" }, { path: "/journal" }, { path: "/about" }],
+  },
+});
