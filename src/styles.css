@@ -225,4 +225,32 @@
   }
   .prose-editorial strong { font-weight: 600; }
   .prose-editorial em { font-style: italic; }
+
+  /* Inline images — same treatment whether placed in markdown or as the
+     leading "cover" figure rendered above the article body. */
+  .prose-editorial img,
+  .prose-editorial-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    display: block;
+  }
+  .prose-editorial img {
+    margin-top: 2.25em;
+    margin-bottom: 2.25em;
+  }
+  .prose-editorial figure,
+  .prose-editorial-figure {
+    margin: 2.25em 0;
+  }
+  .prose-editorial figcaption,
+  .prose-editorial-figure figcaption {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--color-ink-soft);
+    text-align: center;
+    margin-top: 0.75rem;
+    letter-spacing: 0.01em;
+  }
 }
