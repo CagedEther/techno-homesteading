@@ -4,8 +4,9 @@ description: "Inside the most photographed staircase in Manhattan — and the fo
 date: "2025-02-04"
 author: "Iris Hartmann"
 category: "Architecture"
-cover: "post-staircase"
 ---
+
+![A continuous helix of book-matched Calacatta marble spiraling four stories upward](/images/posts/post-staircase.jpg)
 
 It begins, as so many great staircases do, with a problem of light. The penthouse, occupying the top three floors of a 1920s tower, had been carved up over the decades into a maze of small rooms. The new owners wanted air. They wanted, above all, a way for the morning sun to fall four stories into the heart of the home.
 

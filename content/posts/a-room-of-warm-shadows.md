@@ -4,8 +4,9 @@ description: "How a Milanese designer reimagined the family living room as a sin
 date: "2025-02-28"
 author: "Marco Pellegrino"
 category: "Interiors"
-cover: "post-living-room"
 ---
+
+![A Milanese living room anchored by a honey-veined travertine fireplace and burnt-sienna velvet sofa](/images/posts/post-living-room.jpg)
 
 The brief, the designer recalls with a small smile, was unusually short: "make us want to stay home." Three years and one travertine fireplace later, the family has all but stopped accepting dinner invitations.
 
