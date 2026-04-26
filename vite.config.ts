@@ -6,16 +6,11 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig({
-  // Pre-render all known routes at build time so the published site is fully
-  // static and SEO-friendly. The `/journal/$slug` route also exports its own
-  // `prerender` config listing every post slug.
-  tanstackStart: {
-    prerender: {
-      enabled: true,
-      crawlLinks: true,
-      retryCount: 2,
-    },
-    pages: [{ path: "/" }, { path: "/journal" }, { path: "/about" }],
-  },
-});
+// Note on SSG: this project targets Cloudflare Workers, which renders every
+// route on the edge with full SSR (meta tags, page HTML, content) on each
+// request. That gives crawlers and social previews the same fully-rendered
+// HTML they would get from a build-time prerender — content is bundled into
+// the Worker via `import.meta.glob` so there is no runtime filesystem or
+// database round-trip. Build-time prerender via the start plugin is not
+// compatible with the Worker output target in this template.
+export default defineConfig();
