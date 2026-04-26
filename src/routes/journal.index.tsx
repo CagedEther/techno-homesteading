@@ -4,17 +4,17 @@ import { getAllPosts, formatDate, type Post } from "@/lib/content";
 export const Route = createFileRoute("/journal/")({
   head: () => ({
     meta: [
-      { title: "The Journal — Atelier" },
+      { title: "The Journal — Techno Homesteading" },
       {
         name: "description",
         content:
-          "Every story Atelier has published — features on architecture, interiors, gardens, and the craftspeople behind them.",
+          "Every story Techno Homesteading has published — features on architecture, interiors, gardens, and the craftspeople behind them.",
       },
-      { property: "og:title", content: "The Journal — Atelier" },
+      { property: "og:title", content: "The Journal — Techno Homesteading" },
       {
         property: "og:description",
         content:
-          "Every story Atelier has published — features on architecture, interiors, gardens, and the craftspeople behind them.",
+          "Every story Techno Homesteading has published — features on architecture, interiors, gardens, and the craftspeople behind them.",
       },
     ],
   }),

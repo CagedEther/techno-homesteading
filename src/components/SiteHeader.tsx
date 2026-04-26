@@ -15,7 +15,7 @@ export function SiteHeader() {
             className="text-2xl font-bold tracking-tight text-ink"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            Atelier
+            Techno Homesteading
           </span>
           <span className="hidden text-[0.65rem] font-medium uppercase tracking-[0.25em] text-ink-soft sm:inline">
             Quarterly Journal
@@ -50,7 +50,7 @@ export function SiteFooter() {
               className="text-2xl font-bold text-ink"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Atelier
+              Techno Homesteading
             </p>
             <p className="mt-2 max-w-md text-sm text-ink-soft">
               A quarterly journal of architecture, interiors, and the quiet art
@@ -58,7 +58,7 @@ export function SiteFooter() {
             </p>
           </div>
           <p className="text-xs uppercase tracking-[0.22em] text-ink-soft">
-            © {new Date().getFullYear()} Atelier Editions
+            © {new Date().getFullYear()} Techno Homesteading
           </p>
         </div>
       </div>
