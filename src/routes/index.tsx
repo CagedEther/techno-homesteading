@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getAllPosts, formatDate, type Post } from "@/lib/content";
+import homepageFeature from "@/assets/homepage-feature.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -54,15 +55,13 @@ function Index() {
             className="group grid gap-10 lg:grid-cols-12 lg:gap-14"
           >
             <div className="relative overflow-hidden lg:col-span-7">
-              {feature.leadImage && (
-                <img
-                  src={feature.leadImage.src}
-                  alt={feature.leadImage.alt || feature.title}
-                  width={1600}
-                  height={1100}
-                  className="aspect-[16/11] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
-                />
-              )}
+              <img
+                src={homepageFeature}
+                alt="A sun-drenched modernist living room with exposed wood beams, raw plaster walls, and a single olive tree in a clay pot"
+                width={1920}
+                height={1080}
+                className="aspect-[16/11] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
+              />
             </div>
             <div className="flex flex-col justify-center lg:col-span-5">
               <p className="eyebrow">The Cover Story · {feature.category}</p>
@@ -143,21 +142,7 @@ function PostCard({
       params={{ slug: post.slug }}
       className="group block"
     >
-      <div className="overflow-hidden">
-        {post.leadImage && (
-          <img
-            src={post.leadImage.src}
-            alt={post.leadImage.alt || post.title}
-            loading="lazy"
-            width={1400}
-            height={1000}
-            className={`w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03] ${
-              large ? "aspect-[4/3]" : "aspect-[5/4]"
-            }`}
-          />
-        )}
-      </div>
-      <p className="eyebrow mt-5">{post.category}</p>
+      <p className="eyebrow">{post.category}</p>
       <h3
         className={`mt-3 text-ink transition-colors group-hover:text-primary ${
           large ? "text-2xl md:text-3xl" : "text-xl"
@@ -166,7 +151,7 @@ function PostCard({
       >
         {post.title}
       </h3>
-      <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+      <p className={`mt-3 leading-relaxed text-ink-soft ${large ? "text-base" : "text-sm"}`}>
         {post.description}
       </p>
       <p className="mt-4 text-[0.7rem] uppercase tracking-[0.2em] text-ink-soft">

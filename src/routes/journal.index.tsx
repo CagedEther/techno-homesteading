@@ -49,21 +49,9 @@ function JournalIndex() {
             <Link
               to="/journal/$slug"
               params={{ slug: post.slug }}
-              className="group grid gap-8 py-10 md:grid-cols-12 md:gap-10"
+              className="group block py-10"
             >
-              <div className="md:col-span-5">
-                {post.leadImage && (
-                  <img
-                    src={post.leadImage.src}
-                    alt={post.leadImage.alt || post.title}
-                    loading="lazy"
-                    width={1400}
-                    height={1000}
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-[1000ms] ease-out group-hover:scale-[1.02]"
-                  />
-                )}
-              </div>
-              <div className="flex flex-col justify-center md:col-span-7">
+              <div className="mx-auto max-w-3xl">
                 <p className="eyebrow">{post.category}</p>
                 <h2
                   className="mt-3 text-3xl text-ink transition-colors group-hover:text-primary md:text-4xl"
