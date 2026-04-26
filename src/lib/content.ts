@@ -62,6 +62,16 @@ const PAGE_FILES = import.meta.glob("/content/pages/*.md", {
   import: "default",
 }) as Record<string, string>;
 
+// Eager-load post images so Vite emits them as hashed assets and gives us
+// the public URL to substitute into rendered Markdown. Markdown authors
+// reference images using the source path (e.g. `/src/assets/posts/foo.jpg`)
+// and we rewrite each src to the bundled URL at parse time.
+const POST_IMAGES = import.meta.glob("/src/assets/posts/*.{jpg,jpeg,png,webp,avif}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+
 function slugFromPath(path: string): string {
   const file = path.split("/").pop() ?? "";
   return file.replace(/\.md$/, "");
@@ -71,6 +81,19 @@ function configureMarked() {
   marked.setOptions({ gfm: true, breaks: false });
 }
 configureMarked();
+
+/**
+ * Rewrites `src` attributes that point at source-tree image paths to the
+ * Vite-bundled URL for the same asset. Leaves external URLs and already-
+ * resolved hashed asset URLs untouched.
+ */
+function rewriteImageSources(html: string): string {
+  return html.replace(/<img\b([^>]*?)\bsrc\s*=\s*["']([^"']+)["']([^>]*)>/gi, (full, pre, src, post) => {
+    const resolved = POST_IMAGES[src];
+    if (!resolved) return full;
+    return `<img${pre}src="${resolved}"${post}>`;
+  });
+}
 
 function estimateReadingMinutes(text: string): number {
   const words = text.trim().split(/\s+/).length;
@@ -99,7 +122,7 @@ export function getAllPosts(): Post[] {
   const posts: Post[] = Object.entries(POST_FILES).map(([path, raw]) => {
     const { data, content } = parseFrontmatter(raw);
     const slug = slugFromPath(path);
-    const html = marked.parse(content) as string;
+    const html = rewriteImageSources(marked.parse(content) as string);
     return {
       slug,
       title: data.title ?? slug,

@@ -6,7 +6,7 @@ author: "Eleanor Vance"
 category: "Houses"
 ---
 
-![A cedar-and-stone retreat tucked just below a Sierra foothills ridgeline at golden hour](/images/posts/post-sierra-foothills-house.jpg)
+![A cedar-and-stone retreat tucked just below a Sierra foothills ridgeline at golden hour](/src/assets/posts/post-sierra-foothills-house.jpg)
 
 By late afternoon, the foothills have a way of turning everything legible. The grasses go from pale to gold. The oaks begin to draw long, nervous shadows over the granite. Even the house, tucked just below the ridgeline, seems less like an object placed on the land than a patient answer to it.
 

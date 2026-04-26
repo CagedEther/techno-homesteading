@@ -6,7 +6,7 @@ author: "Marco Pellegrino"
 category: "Interiors"
 ---
 
-![A Milanese living room anchored by a honey-veined travertine fireplace and burnt-sienna velvet sofa](/images/posts/post-living-room.jpg)
+![A Milanese living room anchored by a honey-veined travertine fireplace and burnt-sienna velvet sofa](/src/assets/posts/post-living-room.jpg)
 
 The brief, the designer recalls with a small smile, was unusually short: "make us want to stay home." Three years and one travertine fireplace later, the family has all but stopped accepting dinner invitations.
 
