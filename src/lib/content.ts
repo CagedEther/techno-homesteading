@@ -4,6 +4,7 @@ import postLivingRoom from "@/assets/post-living-room.jpg";
 import postCourtyard from "@/assets/post-courtyard.jpg";
 import postStaircase from "@/assets/post-staircase.jpg";
 import postKitchen from "@/assets/post-kitchen.jpg";
+import postSierraFoothillsHouse from "@/assets/post-sierra-foothills-house.jpg";
 
 /**
  * Map of cover-image keys (referenced in markdown frontmatter) to bundled
@@ -15,6 +16,7 @@ const COVER_IMAGES: Record<string, string> = {
   "post-courtyard": postCourtyard,
   "post-staircase": postStaircase,
   "post-kitchen": postKitchen,
+  "post-sierra-foothills-house": postSierraFoothillsHouse,
 };
 
 export function resolveCover(key: string | undefined): string | undefined {
@@ -37,7 +39,7 @@ function parseFrontmatter(raw: string): { data: Record<string, string>; content:
     if (!m) continue;
     let value = m[2].trim();
     if (
-      (value.startsWith("\"") && value.endsWith("\"")) ||
+      (value.startsWith('"') && value.endsWith('"')) ||
       (value.startsWith("'") && value.endsWith("'"))
     ) {
       value = value.slice(1, -1);
