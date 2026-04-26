@@ -6,7 +6,7 @@ author: "Hana Mori"
 category: "Gardens"
 ---
 
-![A small Kyoto courtyard with a single maple at its center, ringed by raked gravel](/images/posts/post-courtyard.jpg)
+![A small Kyoto courtyard with a single maple at its center, ringed by raked gravel](/src/assets/posts/post-courtyard.jpg)
 
 The maple was planted the day the architect's daughter was born. Twenty-two years on, it has become the house's still center: a column of green held loosely between four stone walls, indifferent to the weather and entirely the point of it.
 

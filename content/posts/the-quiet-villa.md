@@ -6,7 +6,7 @@ author: "Eleanor Vance"
 category: "Houses"
 ---
 
-![A long, low concrete villa pressed into a Mediterranean hillside at dusk](/images/posts/hero-villa.jpg)
+![A long, low concrete villa pressed into a Mediterranean hillside at dusk](/src/assets/posts/hero-villa.jpg)
 
 There is a particular hush that settles over the house just before dusk. The concrete, warmed all afternoon by a stubborn Mediterranean sun, gives back its heat in slow exhalations. Floor-to-ceiling glass dissolves the boundary between the great room and the valley beyond, and for a moment — perhaps two — the architecture seems to hold its breath.
 

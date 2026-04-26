@@ -6,7 +6,7 @@ author: "Eleanor Vance"
 category: "Interiors"
 ---
 
-![A vertical-grain American walnut kitchen with honed Calacatta countertops](/images/posts/post-kitchen.jpg)
+![A vertical-grain American walnut kitchen with honed Calacatta countertops](/src/assets/posts/post-kitchen.jpg)
 
 There is a particular pleasure in a kitchen that has been thought through to the last drawer pull. This one — wrapped, floor to ceiling, in vertical-grain American walnut — manages the rare trick of feeling at once monumental and entirely usable.
 
