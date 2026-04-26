@@ -27,9 +27,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const { posts } = Route.useLoaderData();
-  const [feature, ...rest] = posts;
-  const secondary = rest.slice(0, 2);
-  const grid = rest.slice(2);
+  const [feature, ...rest] = posts as Post[];
+  const secondary: Post[] = rest.slice(0, 2);
+  const grid: Post[] = rest.slice(2);
 
   return (
     <div>
