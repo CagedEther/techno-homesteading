@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getAllPostSlugs, getPost, formatDate } from "@/lib/content";
+import { getPost, formatDate } from "@/lib/content";
 
 export const Route = createFileRoute("/journal/$slug")({
   loader: ({ params }) => {
@@ -59,17 +59,8 @@ export const Route = createFileRoute("/journal/$slug")({
       <p className="mt-3 text-sm text-ink-soft">{error.message}</p>
     </div>
   ),
-  // Pre-render every post at build time for SEO and instant loads.
-  staticData: { prerender: true },
   component: PostPage,
 });
-
-// Tell the prerender step which dynamic params to generate.
-export const prerender = {
-  enabled: true,
-  // List of slugs to prerender; the prerender plugin uses this for params.
-  paths: getAllPostSlugs().map((slug) => `/journal/${slug}`),
-};
 
 function PostPage() {
   const { post } = Route.useLoaderData();
