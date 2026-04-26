@@ -66,19 +66,6 @@ function PostPage() {
   const { post } = Route.useLoaderData();
   return (
     <article>
-      {/* Cover */}
-      {post.coverUrl && (
-        <div className="border-b border-rule">
-          <img
-            src={post.coverUrl}
-            alt={post.title}
-            width={1600}
-            height={1100}
-            className="aspect-[16/9] w-full object-cover"
-          />
-        </div>
-      )}
-
       <div className="mx-auto max-w-3xl px-6 py-16 lg:py-24">
         <p className="eyebrow text-center">{post.category}</p>
         <h1
@@ -99,6 +86,19 @@ function PostPage() {
         </div>
 
         <div className="rule my-12" />
+
+        {post.coverUrl && (
+          <figure className="prose-editorial-figure mb-10">
+            <img
+              src={post.coverUrl}
+              alt={post.title}
+              width={1600}
+              height={1100}
+              className="aspect-[16/9] w-full rounded-sm object-cover"
+              loading="eager"
+            />
+          </figure>
+        )}
 
         <div
           className="prose-editorial"
