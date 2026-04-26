@@ -18,10 +18,10 @@ export const Route = createFileRoute("/journal/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.description },
-        ...(post.coverUrl
+        ...(post.leadImage
           ? [
-              { property: "og:image", content: post.coverUrl },
-              { name: "twitter:image", content: post.coverUrl },
+              { property: "og:image", content: post.leadImage.src },
+              { name: "twitter:image", content: post.leadImage.src },
             ]
           : []),
         { property: "article:published_time", content: post.date },
@@ -86,19 +86,6 @@ function PostPage() {
         </div>
 
         <div className="rule my-12" />
-
-        {post.coverUrl && (
-          <figure className="prose-editorial-figure mb-10">
-            <img
-              src={post.coverUrl}
-              alt={post.title}
-              width={1600}
-              height={1100}
-              className="aspect-[16/9] w-full rounded-sm object-cover"
-              loading="eager"
-            />
-          </figure>
-        )}
 
         <div
           className="prose-editorial"

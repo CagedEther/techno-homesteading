@@ -54,10 +54,10 @@ function Index() {
             className="group grid gap-10 lg:grid-cols-12 lg:gap-14"
           >
             <div className="relative overflow-hidden lg:col-span-7">
-              {feature.coverUrl && (
+              {feature.leadImage && (
                 <img
-                  src={feature.coverUrl}
-                  alt={feature.title}
+                  src={feature.leadImage.src}
+                  alt={feature.leadImage.alt || feature.title}
                   width={1600}
                   height={1100}
                   className="aspect-[16/11] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
@@ -144,10 +144,10 @@ function PostCard({
       className="group block"
     >
       <div className="overflow-hidden">
-        {post.coverUrl && (
+        {post.leadImage && (
           <img
-            src={post.coverUrl}
-            alt={post.title}
+            src={post.leadImage.src}
+            alt={post.leadImage.alt || post.title}
             loading="lazy"
             width={1400}
             height={1000}
