@@ -4,7 +4,7 @@ import { getAllPosts, formatDate, type Post } from "@/lib/content";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Atelier — A Quarterly Journal of Architecture & Interiors" },
+      { title: "Techno Homesteading — A Quarterly Journal of Architecture & Interiors" },
       {
         name: "description",
         content:
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Atelier — A Quarterly Journal of Architecture & Interiors",
+        content: "Techno Homesteading — A Quarterly Journal of Architecture & Interiors",
       },
       {
         property: "og:description",

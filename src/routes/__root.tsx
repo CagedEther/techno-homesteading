@@ -37,11 +37,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Atelier — A Quarterly Journal of Architecture & Interiors" },
+      { title: "Techno Homesteading — A Quarterly Journal of Architecture & Interiors" },
       {
         name: "description",
         content:
-          "Atelier is a quarterly journal devoted to architecture, interiors, and the quiet art of living well.",
+          "Techno Homesteading is a quarterly journal devoted to architecture, interiors, and the quiet art of living well.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

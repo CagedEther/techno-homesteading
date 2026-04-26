@@ -10,19 +10,19 @@ export const Route = createFileRoute("/about")({
     const page = loaderData?.page;
     return {
       meta: [
-        { title: `${page?.title ?? "About"} — Atelier` },
+        { title: `${page?.title ?? "About"} — Techno Homesteading` },
         {
           name: "description",
           content:
             page?.description ??
-            "About Atelier — a quarterly journal of architecture and interiors.",
+            "About Techno Homesteading — a quarterly journal of architecture and interiors.",
         },
-        { property: "og:title", content: `${page?.title ?? "About"} — Atelier` },
+        { property: "og:title", content: `${page?.title ?? "About"} — Techno Homesteading` },
         {
           property: "og:description",
           content:
             page?.description ??
-            "About Atelier — a quarterly journal of architecture and interiors.",
+            "About Techno Homesteading — a quarterly journal of architecture and interiors.",
         },
       ],
     };

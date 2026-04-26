@@ -8,11 +8,11 @@ export const Route = createFileRoute("/journal/$slug")({
     return { post };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Story not found — Atelier" }] };
+    if (!loaderData) return { meta: [{ title: "Story not found — Techno Homesteading" }] };
     const { post } = loaderData;
     return {
       meta: [
-        { title: `${post.title} — Atelier` },
+        { title: `${post.title} — Techno Homesteading` },
         { name: "description", content: post.description },
         { name: "author", content: post.author },
         { property: "og:type", content: "article" },

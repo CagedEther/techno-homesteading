@@ -111,7 +111,7 @@ export function getAllPosts(): Post[] {
       title: data.title ?? slug,
       description: data.description ?? "",
       date: data.date ?? "",
-      author: data.author ?? "Atelier",
+      author: data.author ?? "Techno Homesteading",
       category: data.category ?? "Journal",
       cover: data.cover,
       coverUrl: resolveCover(data.cover),
