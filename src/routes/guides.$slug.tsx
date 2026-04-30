@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getPost, formatDate } from "@/lib/content";
+import { getPost } from "@/lib/content";
 
 export const Route = createFileRoute("/guides/$slug")({
   loader: ({ params }) => {
@@ -81,10 +81,6 @@ function GuidePage() {
           {post.description}
         </p>
         <div className="mt-8 flex items-center justify-center gap-4 text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft">
-          <span>By {post.author}</span>
-          <span className="h-px w-8 bg-rule" />
-          <span>{formatDate(post.date)}</span>
-          <span className="h-px w-8 bg-rule" />
           <span>{post.readingMinutes} min read</span>
         </div>
 
