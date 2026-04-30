@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { getAllPosts, formatDate, type Post } from "@/lib/content";
+import { getAllPosts, type Post } from "@/lib/content";
 
 export const Route = createFileRoute("/guides/")({
   head: () => ({
@@ -59,7 +59,7 @@ function GuidesIndex() {
                   {post.description}
                 </p>
                 <p className="mt-5 text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft">
-                  {post.author} · {formatDate(post.date)} · {post.readingMinutes} min read
+                  {post.readingMinutes} min read
                 </p>
               </div>
             </Link>
