@@ -6,6 +6,8 @@ author: "Techno Homesteading"
 category: "Water"
 ---
 
+![Large water storage tanks beside a homestead building under open sky](/src/assets/post-water-storage.jpg)
+
 Bad water planning shows up before bad solar planning does.
 
 You can throttle discretionary loads. You can tolerate flaky internet. A building can slip on the calendar. Water does not negotiate. If people, stock, or crops need a pump to fire the instant demand appears, you built a single point of failure and named it convenience.

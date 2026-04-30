@@ -6,6 +6,8 @@ author: "Techno Homesteading"
 category: "Monitoring"
 ---
 
+![Homestead monitoring: small sensors and wiring near equipment in practical light](/src/assets/post-homestead-sensing.jpg)
+
 Automation sells faster than monitoring because chores repeat and failures hurt.
 
 On many homesteads the first win is not a smarter actuator. It is earlier signal: tank level, freezer warming, greenhouse heat, a gate that should not be open, a pump that has run too long, a corner of the property drying faster than the rest.

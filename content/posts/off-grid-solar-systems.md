@@ -6,6 +6,8 @@ author: "Techno Homesteading"
 category: "Energy"
 ---
 
+![Rooftop solar array above a homestead roofline at golden hour](/src/assets/post-off-grid-solar.jpg)
+
 Most off-grid conversations open with panel count. It is an easy number. It is also the wrong first number for almost every homestead.
 
 Panels are visible. The design that matters sits underneath: loads, battery bank, inverter, conductors, backup, and the ugly minute when the well pump, the freezer, and the shop tool all want the same slice of the bank.

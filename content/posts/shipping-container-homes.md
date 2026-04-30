@@ -6,6 +6,8 @@ author: "Techno Homesteading"
 category: "Shelter"
 ---
 
+![Stacked shipping containers on a rural site, steel shells ready for adaptation](/src/assets/post-shipping-container-homes.jpg)
+
 The container pitch is seductive.
 
 The box already exists. It stacks, ships, and reads as industrial chic. Cut openings, insulate, move in. Skip the messy middle of conventional construction.

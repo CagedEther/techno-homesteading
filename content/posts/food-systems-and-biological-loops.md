@@ -6,6 +6,8 @@ author: "Techno Homesteading"
 category: "Food Systems"
 ---
 
+![Rows of vegetables and soil in a productive homestead garden](/src/assets/post-food-systems.jpg)
+
 Power systems answer in watts. Networks map to ports. Food systems answer in slow drift: soil structure, pest pressure, a greenhouse that cooks before you notice, a worm bin that goes sour while the surface still looks fine.
 
 Gadgets do not fix that. They make the drift visible earlier, or they add another layer to ignore.

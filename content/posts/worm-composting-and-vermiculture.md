@@ -6,6 +6,8 @@ author: "Techno Homesteading"
 category: "Food Systems"
 ---
 
+![Worm composting bin with rich bedding and vegetable scraps in layered bedding](/src/assets/post-worm-composting.jpg)
+
 Worm composting looks humble on purpose.
 
 A bin, bedding, scraps, air, water, and red wigglers do not read as capital equipment. On a working homestead they can still be one of the cleanest closed loops: kitchen waste becomes biology, biology becomes castings, castings become fertility, fertility becomes food.
