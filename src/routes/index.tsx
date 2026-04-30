@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { getAllPosts, formatDate, type Post } from "@/lib/content";
+import { getAllPosts, type Post } from "@/lib/content";
 import homepageFeature from "@/assets/homepage-feature.jpg";
 
 export const Route = createFileRoute("/")({
@@ -74,11 +74,6 @@ function Index() {
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
                 {feature.description}
               </p>
-              <div className="mt-8 flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-ink-soft">
-                <span>By {feature.author}</span>
-                <span className="h-px w-6 bg-rule" />
-                <span>{formatDate(feature.date)}</span>
-              </div>
               <span className="mt-10 inline-flex items-center gap-3 self-start border-b border-ink pb-1 text-xs font-semibold uppercase tracking-[0.22em] text-ink transition-colors group-hover:text-primary group-hover:border-primary">
                 Read the guide →
               </span>
@@ -143,9 +138,6 @@ function PostCard({ post, large = false }: { post: Post; large?: boolean }) {
       </h3>
       <p className={`mt-3 leading-relaxed text-ink-soft ${large ? "text-base" : "text-sm"}`}>
         {post.description}
-      </p>
-      <p className="mt-4 text-[0.7rem] uppercase tracking-[0.2em] text-ink-soft">
-        {post.author} · {formatDate(post.date)}
       </p>
     </Link>
   );
