@@ -64,13 +64,19 @@ const PAGE_FILES = import.meta.glob("/content/pages/*.md", {
 
 // Eager-load post images so Vite emits them as hashed assets and gives us
 // the public URL to substitute into rendered Markdown. Markdown authors
-// reference images using the source path (e.g. `/src/assets/posts/foo.jpg`)
-// and we rewrite each src to the bundled URL at parse time.
-const POST_IMAGES = import.meta.glob("/src/assets/posts/*.{jpg,jpeg,png,webp,avif}", {
+// reference images using the source path (e.g. `/src/assets/posts/foo.jpg`
+// or `/src/assets/post-bar.jpg` under `src/assets/`).
+const POST_IMAGES_IN_POSTS_DIR = import.meta.glob("/src/assets/posts/*.{jpg,jpeg,png,webp,avif}", {
   eager: true,
   query: "?url",
   import: "default",
 }) as Record<string, string>;
+const POST_IMAGES_IN_ASSETS_ROOT = import.meta.glob("/src/assets/post-*.{jpg,jpeg,png,webp,avif}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+const POST_IMAGES = { ...POST_IMAGES_IN_POSTS_DIR, ...POST_IMAGES_IN_ASSETS_ROOT };
 
 function slugFromPath(path: string): string {
   const file = path.split("/").pop() ?? "";
