@@ -37,14 +37,21 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Techno Homesteading — Systems Guidance for Homestead Inventors" },
+      { title: "Techno Homesteading: For the Off-Grid Inventor in You" },
       {
         name: "description",
         content:
-          "Practical guides for building resilient, grid-lite homestead systems across power, water, food, shelter, connectivity, and automation.",
+          "Techno Homesteading is a quarterly journal devoted to architecture, interiors, and the quiet art of living well.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Techno Homesteading: For the Off-Grid Inventor in You" },
+      { name: "twitter:title", content: "Techno Homesteading: For the Off-Grid Inventor in You" },
+      { name: "description", content: "Techno Homesteading is a practical guide for building a modern, resilient homestead, blending off-grid systems, smart monitoring, and renewable energy." },
+      { property: "og:description", content: "Techno Homesteading is a practical guide for building a modern, resilient homestead, blending off-grid systems, smart monitoring, and renewable energy." },
+      { name: "twitter:description", content: "Techno Homesteading is a practical guide for building a modern, resilient homestead, blending off-grid systems, smart monitoring, and renewable energy." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f531879f-5d3c-44b1-9ad4-1e8a845dffa6" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f531879f-5d3c-44b1-9ad4-1e8a845dffa6" },
     ],
     links: [
       {
