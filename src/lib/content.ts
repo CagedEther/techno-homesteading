@@ -94,11 +94,14 @@ configureMarked();
  * resolved hashed asset URLs untouched.
  */
 function rewriteImageSources(html: string): string {
-  return html.replace(/<img\b([^>]*?)\bsrc\s*=\s*["']([^"']+)["']([^>]*)>/gi, (full, pre, src, post) => {
-    const resolved = POST_IMAGES[src];
-    if (!resolved) return full;
-    return `<img${pre}src="${resolved}"${post}>`;
-  });
+  return html.replace(
+    /<img\b([^>]*?)\bsrc\s*=\s*["']([^"']+)["']([^>]*)>/gi,
+    (full, pre, src, post) => {
+      const resolved = POST_IMAGES[src];
+      if (!resolved) return full;
+      return `<img${pre}src="${resolved}"${post}>`;
+    },
+  );
 }
 
 function estimateReadingMinutes(text: string): number {
@@ -135,7 +138,7 @@ export function getAllPosts(): Post[] {
       description: data.description ?? "",
       date: data.date ?? "",
       author: data.author ?? "Techno Homesteading",
-      category: data.category ?? "Journal",
+      category: data.category ?? "Resource",
       leadImage: extractLeadImage(html),
       html,
       readingMinutes: estimateReadingMinutes(content),

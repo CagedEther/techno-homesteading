@@ -15,14 +15,14 @@ export const Route = createFileRoute("/about")({
           name: "description",
           content:
             page?.description ??
-            "About Techno Homesteading — a quarterly journal of architecture and interiors.",
+            "About Techno Homesteading — practical systems guidance for homestead inventors.",
         },
         { property: "og:title", content: `${page?.title ?? "About"} — Techno Homesteading` },
         {
           property: "og:description",
           content:
             page?.description ??
-            "About Techno Homesteading — a quarterly journal of architecture and interiors.",
+            "About Techno Homesteading — practical systems guidance for homestead inventors.",
         },
       ],
     };
@@ -48,14 +48,14 @@ function AboutPage() {
       >
         {page.title}
       </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-center text-lg italic text-ink-soft" style={{ fontFamily: "var(--font-serif)" }}>
+      <p
+        className="mx-auto mt-6 max-w-2xl text-center text-lg italic text-ink-soft"
+        style={{ fontFamily: "var(--font-serif)" }}
+      >
         {page.description}
       </p>
       <div className="rule my-12" />
-      <div
-        className="prose-editorial"
-        dangerouslySetInnerHTML={{ __html: page.html }}
-      />
+      <div className="prose-editorial" dangerouslySetInnerHTML={{ __html: page.html }} />
     </div>
   );
 }

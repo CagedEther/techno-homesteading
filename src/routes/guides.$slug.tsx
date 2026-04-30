@@ -1,14 +1,14 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getPost, formatDate } from "@/lib/content";
 
-export const Route = createFileRoute("/journal/$slug")({
+export const Route = createFileRoute("/guides/$slug")({
   loader: ({ params }) => {
     const post = getPost(params.slug);
     if (!post) throw notFound();
     return { post };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Story not found — Techno Homesteading" }] };
+    if (!loaderData) return { meta: [{ title: "Guide not found — Techno Homesteading" }] };
     const { post } = loaderData;
     return {
       meta: [
@@ -37,13 +37,13 @@ export const Route = createFileRoute("/journal/$slug")({
         className="mt-4 text-4xl text-ink"
         style={{ fontFamily: "var(--font-serif)", fontWeight: 700 }}
       >
-        That story has wandered off
+        That guide has wandered off
       </h1>
       <Link
-        to="/journal"
+        to="/guides"
         className="mt-8 inline-flex border-b border-ink pb-1 text-xs font-semibold uppercase tracking-[0.22em] text-ink hover:text-primary hover:border-primary"
       >
-        Browse the Journal →
+        Browse the Guides →
       </Link>
     </div>
   ),
@@ -59,10 +59,10 @@ export const Route = createFileRoute("/journal/$slug")({
       <p className="mt-3 text-sm text-ink-soft">{error.message}</p>
     </div>
   ),
-  component: PostPage,
+  component: GuidePage,
 });
 
-function PostPage() {
+function GuidePage() {
   const { post } = Route.useLoaderData();
   return (
     <article>
@@ -74,7 +74,10 @@ function PostPage() {
         >
           {post.title}
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-lg italic text-ink-soft" style={{ fontFamily: "var(--font-serif)" }}>
+        <p
+          className="mx-auto mt-6 max-w-2xl text-center text-lg italic text-ink-soft"
+          style={{ fontFamily: "var(--font-serif)" }}
+        >
           {post.description}
         </p>
         <div className="mt-8 flex items-center justify-center gap-4 text-[0.7rem] uppercase tracking-[0.22em] text-ink-soft">
@@ -87,18 +90,15 @@ function PostPage() {
 
         <div className="rule my-12" />
 
-        <div
-          className="prose-editorial"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <div className="prose-editorial" dangerouslySetInnerHTML={{ __html: post.html }} />
 
         <div className="rule mt-16" />
         <div className="mt-10 text-center">
           <Link
-            to="/journal"
+            to="/guides"
             className="inline-flex border-b border-ink pb-1 text-xs font-semibold uppercase tracking-[0.22em] text-ink transition-colors hover:text-primary hover:border-primary"
           >
-            ← Back to The Journal
+            ← Back to Guides
           </Link>
         </div>
       </div>

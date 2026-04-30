@@ -23,7 +23,9 @@ export const Route = createFileRoute("/pages/$slug")({
   errorComponent: ({ error, reset }) => (
     <div className="mx-auto max-w-2xl px-6 py-32 text-center">
       <p className="text-ink-soft">Something went wrong: {error.message}</p>
-      <button onClick={reset} className="mt-4 underline">Retry</button>
+      <button onClick={reset} className="mt-4 underline">
+        Retry
+      </button>
     </div>
   ),
   notFoundComponent: () => (
@@ -43,7 +45,7 @@ function PageRoute() {
   const { page } = Route.useLoaderData();
   return (
     <div className="mx-auto max-w-3xl px-6 py-20 lg:py-28">
-      <p className="eyebrow text-center">Page</p>
+      <p className="eyebrow text-center">Resource</p>
       <h1
         className="mt-5 text-center text-5xl text-ink md:text-6xl"
         style={{ fontFamily: "var(--font-serif)", fontWeight: 700 }}
@@ -59,10 +61,7 @@ function PageRoute() {
         </p>
       )}
       <div className="rule my-12" />
-      <div
-        className="prose-editorial"
-        dangerouslySetInnerHTML={{ __html: page.html }}
-      />
+      <div className="prose-editorial" dangerouslySetInnerHTML={{ __html: page.html }} />
     </div>
   );
 }

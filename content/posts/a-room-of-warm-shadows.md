@@ -1,21 +1,36 @@
 ---
-title: "A Room of Warm Shadows"
-description: "How a Milanese designer reimagined the family living room as a single, generous gesture in travertine, velvet, and firelight."
+title: "Greenhouse automation should protect the range"
+description: "Vents, fans, irrigation, shade, heat, and alerts work best when they keep plants inside tolerable bands rather than chasing perfection."
 date: "2025-02-28"
-author: "Marco Pellegrino"
-category: "Interiors"
+author: "Techno Homesteading"
+category: "Food Systems"
 ---
 
-![A Milanese living room anchored by a honey-veined travertine fireplace and burnt-sienna velvet sofa](/src/assets/posts/post-living-room.jpg)
+Greenhouses invite automation because conditions change quickly. A sunny hour can push temperature past the useful range. One missed irrigation cycle can stress starts. A cold night can erase weeks of careful work.
 
-The brief, the designer recalls with a small smile, was unusually short: "make us want to stay home." Three years and one travertine fireplace later, the family has all but stopped accepting dinner invitations.
+The right goal is not perfect climate control. The right goal is keeping living systems inside bands they can tolerate, with enough warning that a human can intervene before a problem becomes expensive.
 
-## A Hearth, Reimagined
+## Insight: Monitor before automating
 
-Anchoring the room is a slab of honey-veined travertine, quarried in Tivoli and split in a single piece. Around it, the furniture orbits in conversation — a burnt-sienna velvet sofa, a pair of low Scarpa armchairs, a circular walnut table that doubles as a lectern for oversized art books.
+Start with temperature, humidity, soil moisture or reservoir level, and power state. Add light, pH, EC, or leaf-zone measurements only when they change a decision.
 
-## The Quiet Drama of Materials
+Once the signals are trustworthy, automation can take the boring protective jobs: open vents, start fans, trigger shade, run irrigation, or send alerts before heat, cold, or drought cross a threshold.
 
-Walls are lime-washed in a near-imperceptible blush. The herringbone floor, reclaimed from a Piedmontese farmhouse, has been waxed rather than lacquered, so it deepens with use. Above the mantel, a contemporary canvas — moonlike, ambiguous — supplies the room's only loud note.
+## Relevance: Living systems punish hidden complexity
 
-It is a room, finally, that understands the fundamental promise of a home: that the day, however demanding, may always be set down at the door.
+A greenhouse controller that only one person understands is a seasonal liability. So is an irrigation valve with no manual bypass, a heater with no independent thermostat, or a cloud automation that fails when the uplink drops.
+
+Local-first control matters because the plants do not care whether the vendor API is healthy.
+
+## Next Action: Define the tolerable band
+
+For one greenhouse zone, write:
+
+1. High temperature action.
+2. Low temperature action.
+3. Dryness action.
+4. Humidity or ventilation action.
+5. Power-loss action.
+6. Manual override.
+
+Then test the automation while you are present. A resilient greenhouse is not impressive because it is autonomous. It is useful because it buys time when weather and chores collide.

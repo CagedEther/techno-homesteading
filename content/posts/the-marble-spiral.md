@@ -1,19 +1,37 @@
 ---
-title: "The Marble Spiral"
-description: "Inside the most photographed staircase in Manhattan — and the four-year obsession that brought it into being."
+title: "Solar well pumps make water an energy problem"
+description: "A well pump can dominate off-grid design because water demand, startup surge, storage, and repair access all meet at the same motor."
 date: "2025-02-04"
-author: "Iris Hartmann"
-category: "Architecture"
+author: "Techno Homesteading"
+category: "Water"
 ---
 
-![A continuous helix of book-matched Calacatta marble spiraling four stories upward](/src/assets/posts/post-staircase.jpg)
+Solar well pumps look like a water purchase. They are also an electrical design decision.
 
-It begins, as so many great staircases do, with a problem of light. The penthouse, occupying the top three floors of a 1920s tower, had been carved up over the decades into a maze of small rooms. The new owners wanted air. They wanted, above all, a way for the morning sun to fall four stories into the heart of the home.
+On many rural properties, the pump is the load that forces the conversation about voltage, inverter surge, batteries, storage tanks, pressure, freeze protection, and whether water can still move when electronics stop cooperating.
 
-## A Single, Sculpted Gesture
+## Insight: Pump to storage when conditions are good
 
-The answer was a continuous helix of book-matched Calacatta, cantilevered from a hidden steel spine. Four years of drawings. Eleven full-scale mockups. A bronze handrail bent by a single craftsman in Brescia.
+The strongest pattern is not always pump-on-demand. It is pumping into storage when sun, battery state, and equipment conditions are favorable, then drawing from storage when the household, animals, or irrigation need water.
 
-## Restraint as Theater
+That separation gives the site time. A cistern, elevated tank, or pressure-managed buffer can keep the homestead operating through short outages, pump faults, or repair windows.
 
-Standing at the base, one understands the discipline. There is nothing else in the room — no art, no furniture, no rug. The staircase is permitted to be the only thing it needs to be.
+## Relevance: The pump sets the system size
+
+Depth, flow rate, pressure requirements, pipe run, motor type, controller design, and startup behavior all shape the electrical side. Deep wells and high pressure demands can turn a modest backup system into something larger.
+
+Inventor-homesteaders should treat the pump as a shared component between energy and water, not as a black box at the bottom of a casing.
+
+## Next Action: Write the pump fact sheet
+
+Collect:
+
+1. Well depth and static water level.
+2. Pump model and voltage.
+3. Flow rate.
+4. Pressure target.
+5. Startup or controller requirements.
+6. Storage volume.
+7. Manual or alternate water path.
+
+If you cannot answer those questions, the property has a hidden dependency. Start there before buying panels, batteries, tanks, or automation.

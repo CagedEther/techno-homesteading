@@ -3,7 +3,7 @@ import logo from "@/assets/logo-techno-homesteading.png";
 
 const NAV = [
   { to: "/", label: "Home" },
-  { to: "/journal", label: "Journal" },
+  { to: "/guides", label: "Guides" },
   { to: "/about", label: "About" },
 ] as const;
 
@@ -12,11 +12,7 @@ export function SiteHeader() {
     <header className="border-b border-rule bg-paper">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
         <Link to="/" className="flex items-center gap-4">
-          <img
-            src={logo}
-            alt="Techno Homesteading"
-            className="h-14 w-auto md:h-20 lg:h-24"
-          />
+          <img src={logo} alt="Techno Homesteading" className="h-14 w-auto md:h-20 lg:h-24" />
         </Link>
         <nav className="flex items-center gap-7">
           {NAV.map((item) => (
@@ -43,14 +39,10 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-12">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <img
-              src={logo}
-              alt="Techno Homesteading"
-              className="h-8 w-auto md:h-10"
-            />
+            <img src={logo} alt="Techno Homesteading" className="h-8 w-auto md:h-10" />
             <p className="mt-2 max-w-md text-sm text-ink-soft">
-              A quarterly journal of architecture, interiors, and the quiet art
-              of living well.
+              Practical systems guidance for inventor-homesteaders building resilient, local-first
+              properties.
             </p>
           </div>
           <p className="text-xs uppercase tracking-[0.22em] text-ink-soft">

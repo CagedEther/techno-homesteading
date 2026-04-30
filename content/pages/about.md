@@ -1,16 +1,20 @@
 ---
 title: "About Techno Homesteading"
-description: "Techno Homesteading is a quarterly journal devoted to architecture, interiors, and the quiet art of living well."
+description: "Techno Homesteading is a practical systems resource for inventor-homesteaders building resilient, local-first properties."
 ---
 
-Techno Homesteading began with a simple conviction: that the rooms we inhabit shape us as surely as we shape them. Founded in 2024 by a small editorial team based in Lisbon and New York, the journal publishes long-form features on the architects, designers, and craftspeople whose work rewards a second look.
+Techno Homesteading is for people who want more control over the systems that make daily life possible: power, water, food, shelter, connectivity, sensing, and automation.
 
-This site explores homesteading through a technological lens—highlighting not only traditional craftsmanship but also the innovative tools, smart systems, and digital ideas shaping how we build, dwell, and create comfort in the present age. Our focus is on the intersection where technology and intentional living meet.
+The focus is grid-lite resilience. Full off-grid living is one path, but most households need something more practical: fewer single points of failure, better visibility into critical systems, local-first controls, manual fallback, and tools that can be understood and repaired.
 
 ## What We Cover
 
-We are interested in houses that begin with their sites, in interiors that hold up after the photograph fades, in materials that age into themselves. We are not interested in trends.
+We publish guides for inventor-homesteaders, technically fluent landowners, rural remote workers, makers, and households using modern tools to build autonomy without adding invisible dependency.
+
+Core topics include solar and battery systems, water storage, well pumps, rural internet, local networks, Home Assistant, LoRa, monitoring, greenhouse control, chicken coop automation, container buildings, hydroponics, composting, and biological loops.
 
 ## How We Work
 
-Every story is reported in person. Every photograph is shot on assignment. We publish slowly, on purpose.
+Every guide starts with the system, not the gadget. We look for the load, failure mode, maintenance path, manual override, and trade-off before naming equipment.
+
+The goal is not a futuristic homestead. The goal is resilient household infrastructure a real person can operate when weather, outages, animals, mud, distance, and time pressure all show up together.

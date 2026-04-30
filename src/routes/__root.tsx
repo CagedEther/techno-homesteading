@@ -37,11 +37,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Techno Homesteading — A Quarterly Journal of Architecture & Interiors" },
+      { title: "Techno Homesteading — Systems Guidance for Homestead Inventors" },
       {
         name: "description",
         content:
-          "Techno Homesteading is a quarterly journal devoted to architecture, interiors, and the quiet art of living well.",
+          "Practical guides for building resilient, grid-lite homestead systems across power, water, food, shelter, connectivity, and automation.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

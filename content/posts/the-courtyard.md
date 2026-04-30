@@ -1,19 +1,37 @@
 ---
-title: "A Courtyard for Listening to Rain"
-description: "In a quiet corner of Kyoto, a stone house gathers itself around a single maple — and a lifetime of careful attention."
+title: "Automatic chicken coop doors need graceful failure"
+description: "A coop door is a perfect automation test because the job is simple, the consequences are real, and manual override matters."
 date: "2025-01-18"
-author: "Hana Mori"
-category: "Gardens"
+author: "Techno Homesteading"
+category: "Automation"
 ---
 
-![A small Kyoto courtyard with a single maple at its center, ringed by raked gravel](/src/assets/posts/post-courtyard.jpg)
+An automatic chicken coop door is one of the clearest entry points into homestead automation. The chore is repetitive. The timing matters. The cost of failure can be immediate.
 
-The maple was planted the day the architect's daughter was born. Twenty-two years on, it has become the house's still center: a column of green held loosely between four stone walls, indifferent to the weather and entirely the point of it.
+That makes it useful as a design test. If a small door cannot fail safely, the property is not ready to hand bigger jobs to software.
 
-## Borrowed Silence
+## Insight: Simple jobs still need failure design
 
-The courtyard is small — barely four meters across — but its proportions are exact. Raked gravel rings the trunk in concentric circles, redrawn each Sunday morning. A single timber lintel, deliberately rough, frames the view from the corridor.
+The basic function is open in the morning, close at night. The real system has predators, bedding, ice, dust, weak batteries, confused light sensors, stuck tracks, curious birds, and humans who may not be standing beside it when something goes wrong.
 
-## A Practice, Not a Project
+Local schedules, light sensors, battery backup, obstruction detection, and status alerts can all help. None of them remove the need for a latch you can inspect and a manual action you can perform in the dark.
 
-"A garden is never finished," the architect says, watching a single leaf drift down. "It is only paid attention to."
+## Relevance: Coop doors teach the automation rule
+
+Every homestead automation should answer:
+
+1. What happens if it fails on?
+2. What happens if it fails off?
+3. How does a person know?
+4. How does a person override it?
+5. Does it keep working without internet?
+
+Those questions scale from coop doors to pumps, greenhouse vents, irrigation valves, lights, and livestock water.
+
+## Next Action: Run the overnight test
+
+Before trusting the door, test it for several evenings while you are home.
+
+Watch the close cycle. Check the latch. Simulate power loss. Block the track. Confirm the alert. Practice manual override. Then write the backup routine where another adult can find it.
+
+The goal is not a smart coop. The goal is an automation that reduces chores without hiding risk from the people and animals who depend on it.
