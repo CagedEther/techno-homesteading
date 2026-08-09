@@ -1,7 +1,9 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -37,21 +39,28 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Techno Homesteading: For the Off-Grid Inventor in You" },
+      { title: "Techno Homesteading — Old Wisdom, Useful Technology" },
       {
         name: "description",
         content:
-          "Techno Homesteading is a quarterly journal devoted to architecture, interiors, and the quiet art of living well.",
+          "Practical guidance for growing food, producing your own energy, and using technology to build a more capable life on the land.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Techno Homesteading: For the Off-Grid Inventor in You" },
-      { name: "twitter:title", content: "Techno Homesteading: For the Off-Grid Inventor in You" },
-      { name: "description", content: "Techno Homesteading is a practical guide for building a modern, resilient homestead, blending off-grid systems, smart monitoring, and renewable energy." },
-      { property: "og:description", content: "Techno Homesteading is a practical guide for building a modern, resilient homestead, blending off-grid systems, smart monitoring, and renewable energy." },
-      { name: "twitter:description", content: "Techno Homesteading is a practical guide for building a modern, resilient homestead, blending off-grid systems, smart monitoring, and renewable energy." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f531879f-5d3c-44b1-9ad4-1e8a845dffa6" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f531879f-5d3c-44b1-9ad4-1e8a845dffa6" },
+      { property: "og:title", content: "Techno Homesteading — Old Wisdom, Useful Technology" },
+      { name: "twitter:title", content: "Techno Homesteading — Old Wisdom, Useful Technology" },
+      {
+        property: "og:description",
+        content:
+          "Old wisdom, useful technology, and practical guidance for a more self-reliant life on the land.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Old wisdom, useful technology, and practical guidance for a more self-reliant life on the land.",
+      },
+      { property: "og:image", content: "/og.png" },
+      { name: "twitter:image", content: "/og.png" },
     ],
     links: [
       {
@@ -70,6 +79,28 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');
+`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xzrlt12uxw");
+`,
+          }}
+        />
       </head>
       <body>
         {children}
@@ -82,6 +113,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <div className="flex min-h-screen flex-col bg-paper">
+      <GoogleAnalytics />
       <SiteHeader />
       <main className="flex-1">
         <Outlet />
