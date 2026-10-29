@@ -56,7 +56,9 @@ export const Route = createFileRoute("/guides/$slug")({
       >
         Something went wrong
       </h1>
-      <p className="mt-3 text-sm text-ink-soft">{error.message}</p>
+      <p className="mt-3 text-sm text-ink-soft">
+        {error instanceof Error ? error.message : String(error)}
+      </p>
     </div>
   ),
   component: GuidePage,
