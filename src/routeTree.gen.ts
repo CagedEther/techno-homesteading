@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as OffGridAiRouteImport } from './routes/off-grid-ai'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GuidesIndexRouteImport } from './routes/guides.index'
 import { Route as PagesSlugRouteImport } from './routes/pages.$slug'
 import { Route as GuidesSlugRouteImport } from './routes/guides.$slug'
 
+const OffGridAiRoute = OffGridAiRouteImport.update({
+  id: '/off-grid-ai',
+  path: '/off-grid-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -44,6 +50,7 @@ const GuidesSlugRoute = GuidesSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/off-grid-ai': typeof OffGridAiRoute
   '/guides/$slug': typeof GuidesSlugRoute
   '/pages/$slug': typeof PagesSlugRoute
   '/guides/': typeof GuidesIndexRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/off-grid-ai': typeof OffGridAiRoute
   '/guides/$slug': typeof GuidesSlugRoute
   '/pages/$slug': typeof PagesSlugRoute
   '/guides': typeof GuidesIndexRoute
@@ -59,19 +67,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/off-grid-ai': typeof OffGridAiRoute
   '/guides/$slug': typeof GuidesSlugRoute
   '/pages/$slug': typeof PagesSlugRoute
   '/guides/': typeof GuidesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/guides/$slug' | '/pages/$slug' | '/guides/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/off-grid-ai'
+    | '/guides/$slug'
+    | '/pages/$slug'
+    | '/guides/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/guides/$slug' | '/pages/$slug' | '/guides'
+  to:
+    | '/'
+    | '/about'
+    | '/off-grid-ai'
+    | '/guides/$slug'
+    | '/pages/$slug'
+    | '/guides'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/off-grid-ai'
     | '/guides/$slug'
     | '/pages/$slug'
     | '/guides/'
@@ -80,6 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  OffGridAiRoute: typeof OffGridAiRoute
   GuidesSlugRoute: typeof GuidesSlugRoute
   PagesSlugRoute: typeof PagesSlugRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
@@ -87,6 +110,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/off-grid-ai': {
+      id: '/off-grid-ai'
+      path: '/off-grid-ai'
+      fullPath: '/off-grid-ai'
+      preLoaderRoute: typeof OffGridAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -128,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  OffGridAiRoute: OffGridAiRoute,
   GuidesSlugRoute: GuidesSlugRoute,
   PagesSlugRoute: PagesSlugRoute,
   GuidesIndexRoute: GuidesIndexRoute,

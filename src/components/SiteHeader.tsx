@@ -4,6 +4,7 @@ import logo from "@/assets/logo-techno-homesteading.png";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/guides", label: "Guides" },
+  { to: "/off-grid-ai", label: "Off-Grid AI" },
   { to: "/about", label: "About" },
 ] as const;
 
@@ -14,7 +15,7 @@ export function SiteHeader() {
         <Link to="/" className="flex items-center gap-4">
           <img src={logo} alt="Techno Homesteading" className="h-14 w-auto md:h-20 lg:h-24" />
         </Link>
-        <nav className="flex items-center gap-7">
+        <nav className="flex flex-wrap items-center justify-end gap-x-7 gap-y-2">
           {NAV.map((item) => (
             <Link
               key={item.to}

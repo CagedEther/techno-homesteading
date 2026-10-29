@@ -46,6 +46,8 @@ export interface PageDoc {
   title: string;
   description: string;
   html: string;
+  /** First image found in the page body — used for social previews. */
+  leadImage?: { src: string; alt: string };
 }
 
 // Eager-load all markdown at build time so it ships in the bundle (works on
@@ -66,11 +68,14 @@ const PAGE_FILES = import.meta.glob("/content/pages/*.md", {
 // the public URL to substitute into rendered Markdown. Markdown authors
 // reference images using the source path (e.g. `/src/assets/posts/foo.jpg`
 // or `/src/assets/post-bar.jpg` under `src/assets/`).
-const POST_IMAGES_IN_POSTS_DIR = import.meta.glob("/src/assets/posts/*.{jpg,jpeg,png,webp,avif}", {
-  eager: true,
-  query: "?url",
-  import: "default",
-}) as Record<string, string>;
+const POST_IMAGES_IN_POSTS_DIR = import.meta.glob(
+  "/src/assets/posts/*.{jpg,jpeg,png,webp,avif,svg}",
+  {
+    eager: true,
+    query: "?url",
+    import: "default",
+  },
+) as Record<string, string>;
 const POST_IMAGES_IN_ASSETS_ROOT = import.meta.glob("/src/assets/post-*.{jpg,jpeg,png,webp,avif}", {
   eager: true,
   query: "?url",
@@ -165,11 +170,13 @@ function loadPages(): Map<string, PageDoc> {
   for (const [path, raw] of Object.entries(PAGE_FILES)) {
     const { data, content } = parseFrontmatter(raw);
     const slug = slugFromPath(path);
+    const html = rewriteImageSources(marked.parse(content) as string);
     map.set(slug, {
       slug,
       title: data.title ?? slug,
       description: data.description ?? "",
-      html: marked.parse(content) as string,
+      html,
+      leadImage: extractLeadImage(html),
     });
   }
   cachedPages = map;

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1376 768" role="img" aria-labelledby="t d">
+  <title id="t">One week of data, August 18 to 22</title>
+  <desc id="d">Solar input was 12.42 kWh and grid supply 5.07 kWh, while the house used only 2.90 kWh. The battery still fell from about 50 percent to about 5 percent.</desc>
+  <rect width="1376" height="768" fill="#f6f2ea"/>
+  <g font-family="Inter, 'Helvetica Neue', Arial, sans-serif" fill="#1f1a16">
+    <text x="64" y="84" font-size="16" letter-spacing="4" fill="#8a2f22" font-weight="600">ONE WEEK OF DATA · AUG 18–22</text>
+    <text x="64" y="128" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700">17.5 kWh went in. 2.9 kWh got used.</text>
+    <text x="64" y="164" font-size="18" fill="#5c554f">And the battery still drained.</text>
+
+    <!-- axis -->
+    <line x1="120" y1="640" x2="860" y2="640" stroke="#1f1a16" stroke-width="2"/>
+    <g stroke="#d8d2ca" stroke-width="1">
+      <line x1="120" y1="520" x2="860" y2="520"/><line x1="120" y1="400" x2="860" y2="400"/><line x1="120" y1="280" x2="860" y2="280"/>
+    </g>
+    <g font-size="14" fill="#5c554f" text-anchor="end">
+      <text x="108" y="645">0</text><text x="108" y="525">4</text><text x="108" y="405">8</text><text x="108" y="285">12 kWh</text>
+    </g>
+    <!-- scale: 30px per kWh -->
+    <rect x="170" y="267.4" width="160" height="372.6" fill="#2f3a46"/>
+    <text x="250" y="255" text-anchor="middle" font-size="22" font-weight="700">12.42</text>
+    <text x="250" y="672" text-anchor="middle" font-size="16">Solar input</text>
+
+    <rect x="400" y="487.9" width="160" height="152.1" fill="#9a9187"/>
+    <text x="480" y="476" text-anchor="middle" font-size="22" font-weight="700">5.07</text>
+    <text x="480" y="672" text-anchor="middle" font-size="16">Grid supply</text>
+
+    <rect x="630" y="553" width="160" height="87" fill="#8a2f22"/>
+    <text x="710" y="541" text-anchor="middle" font-size="22" font-weight="700">2.90</text>
+    <text x="710" y="672" text-anchor="middle" font-size="16">House usage</text>
+
+    <!-- battery gauge -->
+    <text x="960" y="250" font-size="16" letter-spacing="3" fill="#5c554f" font-weight="600">BATTERY CHARGE</text>
+    <g>
+      <rect x="960" y="280" width="140" height="300" rx="8" fill="#fffdf8" stroke="#1f1a16" stroke-width="3"/>
+      <rect x="1005" y="264" width="50" height="16" rx="3" fill="#1f1a16"/>
+      <rect x="972" y="425" width="116" height="143" fill="#c9c1b4"/>
+      <text x="1030" y="470" text-anchor="middle" font-size="20" font-weight="700">~50%</text>
+      <text x="1030" y="494" text-anchor="middle" font-size="14" fill="#5c554f">start</text>
+    </g>
+    <path d="M1115 430 C 1150 470 1150 520 1170 548" stroke="#8a2f22" stroke-width="3" fill="none"/>
+    <path d="M1162 540 l10 12 3 -15z" fill="#8a2f22"/>
+    <g>
+      <rect x="1180" y="280" width="140" height="300" rx="8" fill="#fffdf8" stroke="#8a2f22" stroke-width="3"/>
+      <rect x="1225" y="264" width="50" height="16" rx="3" fill="#8a2f22"/>
+      <rect x="1192" y="553" width="116" height="15" fill="#8a2f22"/>
+      <text x="1250" y="470" text-anchor="middle" font-size="20" font-weight="700" fill="#8a2f22">~5%</text>
+      <text x="1250" y="494" text-anchor="middle" font-size="14" fill="#5c554f">end</text>
+    </g>
+    <text x="960" y="640" font-size="15" fill="#5c554f">Anker's explanation: 50–60% conversion</text>
+    <text x="960" y="662" font-size="15" fill="#5c554f">efficiency at light loads.</text>
+  </g>
+  <text x="1356" y="752" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5c554f" letter-spacing="2">SOURCE: ANKER APP, ONE WEEK, AUG 2025</text>
+</svg>
