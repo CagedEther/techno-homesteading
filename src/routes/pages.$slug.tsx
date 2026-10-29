@@ -22,7 +22,9 @@ export const Route = createFileRoute("/pages/$slug")({
   },
   errorComponent: ({ error, reset }) => (
     <div className="mx-auto max-w-2xl px-6 py-32 text-center">
-      <p className="text-ink-soft">Something went wrong: {error.message}</p>
+      <p className="text-ink-soft">
+        Something went wrong: {error instanceof Error ? error.message : String(error)}
+      </p>
       <button onClick={reset} className="mt-4 underline">
         Retry
       </button>
